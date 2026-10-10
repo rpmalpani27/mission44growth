@@ -1,0 +1,31 @@
+clip_id,title,theme,event_type,tags,duration_sec,description,rights_status,driver_fictional
+C01,Turn 1 contact replay,race_recap,crash,crash|replay|start,22,Slow replay of two cars touching at turn 1 on the opening lap with the field scattering,cleared,Isla Brennan
+C02,Feature Race winning move,race_recap,overtake_for_lead,overtake|lead|finish,18,Late-braking pass for the lead on the penultimate lap with the crowd reacting,cleared,Mira Lindqvist
+C03,Chequered flag celebration,race_recap,chequered_flag,finish|celebration|podium,15,Driver stands on the car and waves to the grandstand after taking the flag,cleared,Tessa Okonkwo
+C04,Reverse grid charge from P8,reverse_grid_chaos,overtake_for_lead,reverse grid|overtake|charge,25,Onboard shot climbing from P8 to P3 in three laps through traffic,cleared,Zofia Wrona
+C05,Reverse grid first-corner chaos,reverse_grid_chaos,crash,reverse grid|chaos|start,20,Wide shot of cars bunching up and spinning at the first corner,cleared,Anneke de Rooij
+C06,Safety car restart battle,reverse_grid_chaos,safety_car,restart|battle|safety car,24,Side-by-side restart with three cars fighting into the first braking zone,cleared,Camila Duarte
+C07,Meet the driver: nerves before lights out,driver_story,none,meet the driver|nerves|interview,28,Driver talks about pre-race nerves while a mechanic adjusts her seat belts,cleared,Juno Castellanos
+C08,From karting at age seven,driver_story,none,karting|story|family,30,Home video style montage of a young driver in karts then in the F4 car,needs_clearance,Clara Vasseur
+C09,Rivals share a laugh in the garage,driver_story,none,rivalry|friendship|garage,18,Two drivers joke in the garage before qualifying then focus up,cleared,Noor Haddad
+C10,Engineer explains the setup,stem_engineering,none,engineer|setup|girls in stem,29,Female race engineer points at a screen and explains tyre pressure choices,cleared,Maeve Callahan
+C11,Wind tunnel style airflow model,stem_engineering,none,aerodynamics|physics|model,16,Animated airflow over the car wings with simple labels,cleared,Wild Card Entry
+C12,Mechanic and driver pit practice,stem_engineering,none,mechanic|teamwork|practice,21,Quick wheel change practice with the team counting down,cleared,Rosalind Achebe
+C13,Garage walk before qualifying,behind_the_scenes,none,garage|paddock|walkthrough,26,Handheld walk through the garage as the team prepares the cars,cleared,Harper Lindgren
+C14,Grid walk atmosphere,behind_the_scenes,none,grid walk|fans|atmosphere,19,Fans and drivers meeting on the grid ahead of the Feature Race,cleared,Bianca Silveira
+C15,Driver playlist before the race,behind_the_scenes,none,music|ritual|helmet,14,Driver puts on headphones and nods to the beat before the helmet goes on,needs_clearance,Daria Volkova
+C16,Helmet designs of the grid,fashion_lifestyle,none,helmet|design|colors,17,Quick cuts of all the helmet designs under studio lighting,cleared,Yuki Aramaki
+C17,Race suit fit check,fashion_lifestyle,none,race suit|fit check|style,15,Driver shows her race suit and gloves with a spin for the camera,cleared,Elodie Marchetti
+C18,Paddock outfit of the day,fashion_lifestyle,none,outfit|paddock|style,13,Team merchandise styled in three looks around the paddock,cleared,Saoirse Quill
+C19,Sim racer vs real driver,gaming_sim,none,sim racing|challenge|lap time,40,Split screen of a sim racer and a real driver around the same corner,cleared,Mira Lindqvist
+C20,Driver tries the racing game,gaming_sim,none,f1 game|reaction|controller,23,Driver plays a racing game and reacts to her virtual lap time,cleared,Tessa Okonkwo
+C21,Cockpit view versus controller view,gaming_sim,none,cockpit|onboard|comparison,18,Real onboard footage next to a game camera at the same corner,cleared,Juno Castellanos
+C22,Why every tenth counts,data_explainer,pole_lap,qualifying|lap time|data,27,Animated lap trace showing where a driver gained a tenth on the pole lap,cleared,Zofia Wrona
+C23,Braking points compared,data_explainer,none,braking|telemetry|comparison,24,Two speed traces overlaid with the braking point highlighted,cleared,Anneke de Rooij
+C24,Qualifying in 30 seconds,data_explainer,pole_lap,qualifying|summary|pole,30,Fast summary of the 30 minute qualifying session ending with the pole lap,cleared,Camila Duarte
+C25,Women in sport crossover montage,women_in_sport,none,women in sport|crossover|inspiration,22,Montage of F1 Academy drivers next to athletes from other women's sports,needs_clearance,Clara Vasseur
+C26,Young fan meets her favourite driver,women_in_sport,none,fans|inspiration|meet,20,A young fan gets a signed cap from her favourite driver at the fan zone,cleared,Noor Haddad
+C27,Role models on and off track,women_in_sport,none,role model|community|interview,26,Driver talks about what she hopes the next generation of girls will do,cleared,Maeve Callahan
+C28,Me watching the grid on Sunday,memes_trend,none,meme|trend audio|funny,10,Reaction clip of a fan jumping up from the sofa at a close finish,cleared,Wild Card Entry
+C29,Trend audio over the onboard,memes_trend,overtake_for_lead,trend audio|onboard|overtake,12,Onboard overtake cut to a trending sound,cleared,Rosalind Achebe
+C30,Slow motion spin and save,memes_trend,crash,spin|save|slow motion,11,A driver catches a spin and carries on with a slow motion zoom,cleared,Harper Lindgren

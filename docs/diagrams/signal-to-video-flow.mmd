@@ -1,0 +1,25 @@
+---
+title: "Signal to video | Purple = uses AI | Blue = no AI (automation) | Green = human approval | Dashed border = mocked in the hackathon demo"
+---
+flowchart LR
+  S1["<b>STEP 1: Signals</b><br/>comment intent, TV spikes,<br/>follower gap<br/><b>AI: YES</b><br/>Bedrock tags comments<br/>Runs: automatic"]
+  S2["<b>STEP 2: Decide</b><br/>segment + platform<br/>+ format<br/><b>AI: NO</b><br/>scoring and lift tables<br/>Runs: automatic"]
+  S3["<b>STEP 3: Find assets</b><br/>search footage library<br/><b>AI: YES</b><br/>embeddings + search<br/>Runs: automatic"]
+  S4["<b>STEP 4: Script + edit plan</b><br/>hook, clip order, caption<br/><b>AI: YES</b><br/>Claude on Bedrock<br/>Runs: automatic"]
+  S5["<b>STEP 5: Assemble video</b><br/>cut, 9:16, captions<br/><b>AI: NO</b><br/>MediaConvert / FFmpeg<br/>Runs: automatic"]
+  S6["<b>STEP 6: Safety + rights check</b><br/>rules and Guardrails<br/><b>AI: PARTLY</b><br/>Guardrails filter text<br/>Runs: HUMAN approves"]
+  S7["<b>STEP 7: Publish</b><br/>best platform for segment<br/><b>AI: NO</b><br/>platform API<br/>Runs: automatic after approval"]
+  S8["<b>STEP 8: Measure</b><br/>vs control, feed back<br/><b>AI: NO</b><br/>analytics<br/>Runs: automatic"]
+
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
+  S8 -. learn .-> S1
+
+  classDef ai fill:#ede7ff,stroke:#6b4fd8,stroke-width:2px,color:#1b1340
+  classDef noai fill:#e3f1ff,stroke:#2a7bd6,stroke-width:2px,color:#0b2a4a
+  classDef human fill:#e4f7e8,stroke:#2e9b4f,stroke-width:3px,color:#0d3a1c
+  classDef mock stroke-dasharray: 6 4
+
+  class S1,S3,S4 ai
+  class S2,S5,S7,S8 noai
+  class S6 human
+  class S3,S5,S7,S8 mock

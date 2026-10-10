@@ -1,0 +1,38 @@
+{
+ "hook": "POV: You've dreamed of this moment since you were seven years old",
+ "edit_plan": [
+  {
+   "clip_id": "C08",
+   "start_sec": 0,
+   "end_sec": 4,
+   "on_screen_text": "Age 7 in karts"
+  },
+  {
+   "clip_id": "C07",
+   "start_sec": 2,
+   "end_sec": 7,
+   "on_screen_text": "Race day nerves"
+  },
+  {
+   "clip_id": "C09",
+   "start_sec": 0,
+   "end_sec": 4,
+   "on_screen_text": "Rivals become friends"
+  }
+ ],
+ "caption": "From karting dreams to the grid. Meet the next generation of racing. What's your story?",
+ "hashtags": [
+  "#F1Academy",
+  "#DriverStory",
+  "#RacingDreams"
+ ],
+ "cta": "Discover her full journey in the F1 Academy fan app",
+ "data_reason": "POV hook and 15-second format reach under-25 audiences 1.50x and 1.67x platform average respectively, addressing the 30% of new-fan questions in Drive-to-Survive curious segment.",
+ "_meta": {
+  "source": "Amazon Bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "latency_ms": 2632,
+  "input_tokens": 729,
+  "output_tokens": 336
+ }
+}

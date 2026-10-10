@@ -1,0 +1,44 @@
+{
+ "hook": "POV: You just realized the sim setup doesn't prepare you for THIS",
+ "edit_plan": [
+  {
+   "clip_id": "C19",
+   "start_sec": 0,
+   "end_sec": 18,
+   "on_screen_text": "Sim vs Real"
+  },
+  {
+   "clip_id": "C21",
+   "start_sec": 0,
+   "end_sec": 18,
+   "on_screen_text": "Controller vs Cockpit"
+  },
+  {
+   "clip_id": "C20",
+   "start_sec": 0,
+   "end_sec": 15,
+   "on_screen_text": "Game vs Reality"
+  },
+  {
+   "clip_id": "C01",
+   "start_sec": 0,
+   "end_sec": 10,
+   "on_screen_text": "Welcome to F1 Academy"
+  }
+ ],
+ "caption": "From controller to cockpit. See what separates the sim racers from the real deal. Your next obsession starts here.",
+ "hashtags": [
+  "#SimRacing",
+  "#F1Academy",
+  "#RacingGames"
+ ],
+ "cta": "Download the F1 Academy app to watch full races and follow every driver's journey.",
+ "data_reason": "POV hook format drives 1.50x reach with under-25 audiences, and gaming_sim theme reaches 1.82x on Instagram versus platform average, directly addressing the 28% of new-fan questions in this segment.",
+ "_meta": {
+  "source": "Amazon Bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "latency_ms": 3228,
+  "input_tokens": 714,
+  "output_tokens": 402
+ }
+}

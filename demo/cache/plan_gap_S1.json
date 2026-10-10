@@ -1,0 +1,38 @@
+{
+ "hook": "POV: You're about to witness the most chaotic 15 seconds of racing",
+ "edit_plan": [
+  {
+   "clip_id": "C28",
+   "start_sec": 0,
+   "end_sec": 4,
+   "on_screen_text": "When the finish line hits different"
+  },
+  {
+   "clip_id": "C30",
+   "start_sec": 0,
+   "end_sec": 6,
+   "on_screen_text": "Plot twist incoming"
+  },
+  {
+   "clip_id": "C29",
+   "start_sec": 2,
+   "end_sec": 8,
+   "on_screen_text": "She saves it"
+  }
+ ],
+ "caption": "When your Sunday just became legendary. This is why we race.",
+ "hashtags": [
+  "#F1Academy",
+  "#RacingMemes",
+  "#JuniorMotorsport"
+ ],
+ "cta": "See the full race replays in the F1 Academy fan app",
+ "data_reason": "POV hooks drive 1.50x under-25 reach, memes trend hits 2.02x on Instagram, and 15-second videos reach 1.67x versus longer formats for this audience segment",
+ "_meta": {
+  "source": "Amazon Bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "latency_ms": 2723,
+  "input_tokens": 683,
+  "output_tokens": 335
+ }
+}

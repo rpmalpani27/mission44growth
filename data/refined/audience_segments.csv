@@ -1,0 +1,7 @@
+opportunity_rank,segment_id,segment_name,primary_age_band,relevant_posts,interest_signal_comments,current_follower_share,benchmark_share,follower_gap,content_reach_share,engagement_intensity,conversion_readiness,momentum,tv_late_vs_early_ratio,opportunity_score,best_platform,best_theme,best_hook,best_duration_bucket
+1,S4,Future STEM girls,13-17,36,175,0.072,0.144,0.071,0.153,0.099,0.406,-0.175,0.881,60.8,tiktok,stem_engineering,pov_hook,0-15s
+2,S5,Drive-to-Survive curious,18-24,66,410,0.286,0.299,0.013,0.364,0.115,0.295,-0.101,0.912,51.4,tiktok,driver_story,pov_hook,0-15s
+3,S1,Teen Scrollers,13-17,500,76,0.072,0.144,0.071,0.129,0.112,0.263,0.108,0.881,50.9,tiktok,memes_trend,pov_hook,0-15s
+4,S3,Gamers and sim racers,18-24,40,207,0.286,0.299,0.013,0.38,0.11,0.271,-0.028,0.912,32.7,tiktok,gaming_sim,pov_hook,61-90s
+5,S2,Women's-sport crossover fans,18-24,31,110,0.286,0.299,0.013,0.378,0.099,0.255,0.24,0.912,29.8,tiktok,women_in_sport,story_tease,0-15s
+6,S6,Data lovers,18-24,34,67,0.286,0.299,0.013,0.286,0.071,0.209,-0.029,0.912,5.3,tiktok,data_explainer,story_tease,0-15s

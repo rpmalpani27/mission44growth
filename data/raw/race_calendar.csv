@@ -1,0 +1,7 @@
+round,venue,country,country_code,start_date,end_date,has_opening_race,status
+1,Shanghai,China,CN,2026-03-13,2026-03-15,False,completed
+2,Montreal,Canada,CA,2026-05-22,2026-05-24,True,completed
+3,Silverstone,Great Britain,GB,2026-07-03,2026-07-05,False,completed
+4,Zandvoort,Netherlands,NL,2026-08-21,2026-08-23,False,completed
+5,Austin,United States,US,2026-10-23,2026-10-25,True,upcoming
+6,Las Vegas,United States,US,2026-11-19,2026-11-21,False,upcoming

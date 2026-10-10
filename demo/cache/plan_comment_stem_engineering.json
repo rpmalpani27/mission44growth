@@ -1,0 +1,38 @@
+{
+ "hook": "POV: You're about to see what it takes to engineer a winning race car",
+ "edit_plan": [
+  {
+   "clip_id": "C11",
+   "start_sec": 0,
+   "end_sec": 5,
+   "on_screen_text": "Aerodynamics in action"
+  },
+  {
+   "clip_id": "C10",
+   "start_sec": 5,
+   "end_sec": 10,
+   "on_screen_text": "Race engineer: making the calls"
+  },
+  {
+   "clip_id": "C12",
+   "start_sec": 0,
+   "end_sec": 5,
+   "on_screen_text": "Precision teamwork wins races"
+  }
+ ],
+ "caption": "From aerodynamics to pit strategy, these engineers are building the future of motorsport. See how STEM powers every lap.",
+ "hashtags": [
+  "#STEMengineering",
+  "#F1Academy",
+  "#WomenInMotorsport"
+ ],
+ "cta": "Want to learn more? Download the F1 Academy fan app to follow these engineers and discover how to start your own racing journey.",
+ "data_reason": "POV hooks reach under-25 audiences 1.50x better than average, and 15-second videos perform 1.67x stronger on this demographic, while 41% of Future STEM girls ask who these engineers are.",
+ "_meta": {
+  "source": "Amazon Bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "latency_ms": 3224,
+  "input_tokens": 690,
+  "output_tokens": 369
+ }
+}

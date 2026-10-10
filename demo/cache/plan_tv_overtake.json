@@ -1,0 +1,32 @@
+{
+ "hook": "POV: you just saw the most insane overtake of the season",
+ "edit_plan": [
+  {
+   "clip_id": "C29",
+   "start_sec": 0,
+   "end_sec": 8,
+   "on_screen_text": "that move tho"
+  },
+  {
+   "clip_id": "C28",
+   "start_sec": 0,
+   "end_sec": 7,
+   "on_screen_text": "us watching"
+  }
+ ],
+ "caption": "Lead changes hit different. Watch every overtake battle live in the F1 Academy app.",
+ "hashtags": [
+  "#F1Academy",
+  "#MotorsportMemes",
+  "#OvertakeOfTheWeek"
+ ],
+ "cta": "Download the F1 Academy fan app to catch all the lead changes live.",
+ "data_reason": "POV hooks reach under-25 audiences 1.50x platform average, and 15-second videos achieve 1.67x reach index versus longer formats.",
+ "_meta": {
+  "source": "Amazon Bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "latency_ms": 2513,
+  "input_tokens": 700,
+  "output_tokens": 275
+ }
+}

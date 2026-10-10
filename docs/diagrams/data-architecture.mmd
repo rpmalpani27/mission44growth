@@ -1,0 +1,22 @@
+flowchart LR
+  subgraph Sources["Sources (batch upload for the demo)"]
+    A1["TikTok / Instagram / YouTube exports"]
+    A2["Fan comments"]
+    A3["TV ratings"]
+    A4["Race events and followers"]
+  end
+
+  A1 & A2 & A3 & A4 --> S3R[("Amazon S3<br/>raw")]
+  S3R --> G["Clean and unify<br/>(Glue or Lambda)"]
+  G --> BR1["Amazon Bedrock<br/>tag theme, intent, sentiment"]
+  BR1 --> S3F[("Amazon S3<br/>refined")]
+  S3F --> AT["Amazon Athena"]
+  AT --> M["Segment scoring<br/>and lift model"]
+  M --> BR2["Amazon Bedrock<br/>campaign scripts"]
+  BR2 --> UI["Demo app / QuickSight"]
+  UI --> H["Human review<br/>and publish"]
+
+  classDef ai fill:#ede7ff,stroke:#6b4fd8,stroke-width:2px,color:#1b1340
+  classDef store fill:#fff4de,stroke:#d08a00,stroke-width:2px,color:#4a3000
+  class BR1,BR2 ai
+  class S3R,S3F store

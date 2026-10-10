@@ -1,0 +1,38 @@
+{
+ "hook": "POV: You're the engineer keeping the car competitive",
+ "edit_plan": [
+  {
+   "clip_id": "C10",
+   "start_sec": 0,
+   "end_sec": 6,
+   "on_screen_text": "Tyre pressure = speed"
+  },
+  {
+   "clip_id": "C11",
+   "start_sec": 2,
+   "end_sec": 8,
+   "on_screen_text": "Every detail matters"
+  },
+  {
+   "clip_id": "C12",
+   "start_sec": 5,
+   "end_sec": 15,
+   "on_screen_text": "Your decisions win races"
+  }
+ ],
+ "caption": "Engineering isn't just theory. It's the decisions that win races. See what it takes to be an F1 Academy engineer.",
+ "hashtags": [
+  "#STEMGirls",
+  "#MotorsportEngineering",
+  "#F1Academy"
+ ],
+ "cta": "Tap into the F1 Academy fan app to explore engineer careers and watch full behind-the-scenes content.",
+ "data_reason": "POV hooks drive 1.50x under-25 reach, and 15-second videos achieve 1.67x reach versus longer formats, directly addressing the 7.2% follower gap in Future STEM girls.",
+ "_meta": {
+  "source": "Amazon Bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "latency_ms": 2914,
+  "input_tokens": 662,
+  "output_tokens": 347
+ }
+}

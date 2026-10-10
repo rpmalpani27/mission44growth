@@ -1,0 +1,32 @@
+{
+ "hook": "POV: You're watching the feature race and suddenly everything goes sideways",
+ "edit_plan": [
+  {
+   "clip_id": "C01",
+   "start_sec": 0,
+   "end_sec": 8,
+   "on_screen_text": "CHAOS MODE ACTIVATED"
+  },
+  {
+   "clip_id": "C30",
+   "start_sec": 0,
+   "end_sec": 7,
+   "on_screen_text": "PLOT TWIST"
+  }
+ ],
+ "caption": "When the grid goes from zero to hero in 14 minutes. This is why we watch.",
+ "hashtags": [
+  "#F1Academy",
+  "#RaceDay",
+  "#FeatureRace"
+ ],
+ "cta": "Download the F1 Academy fan app to catch every moment of the next race live.",
+ "data_reason": "Teen scrollers respond 32% more to crash moments versus older audiences, and meme-trend content reaches under-25s at 2.02x platform average on Instagram.",
+ "_meta": {
+  "source": "Amazon Bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "latency_ms": 2557,
+  "input_tokens": 704,
+  "output_tokens": 278
+ }
+}

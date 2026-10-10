@@ -1,0 +1,13 @@
+platform,age_band,share_of_platform_audience,source
+tiktok,13_17,0.2,synthetic_assumption
+tiktok,18_24,0.34,synthetic_assumption
+tiktok,25_34,0.28,synthetic_assumption
+tiktok,35_plus,0.18,synthetic_assumption
+instagram,13_17,0.12,synthetic_assumption
+instagram,18_24,0.3,synthetic_assumption
+instagram,25_34,0.3,synthetic_assumption
+instagram,35_plus,0.28,synthetic_assumption
+youtube,13_17,0.1,synthetic_assumption
+youtube,18_24,0.22,synthetic_assumption
+youtube,25_34,0.28,synthetic_assumption
+youtube,35_plus,0.4,synthetic_assumption

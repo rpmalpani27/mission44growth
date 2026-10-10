@@ -1,0 +1,43 @@
+round,session,minute,event_type
+1,Qualifying,1,session_start
+1,Qualifying,26,pole_lap
+1,Reverse Grid Race,1,lights_out
+1,Reverse Grid Race,21,overtake_for_lead
+1,Reverse Grid Race,30,chequered_flag
+1,Feature Race,1,lights_out
+1,Feature Race,27,crash
+1,Feature Race,30,chequered_flag
+2,Qualifying,1,session_start
+2,Qualifying,26,pole_lap
+2,Opening Race,1,lights_out
+2,Opening Race,3,fastest_lap
+2,Opening Race,3,safety_car
+2,Opening Race,8,crash
+2,Opening Race,30,chequered_flag
+2,Reverse Grid Race,1,lights_out
+2,Reverse Grid Race,7,fastest_lap
+2,Reverse Grid Race,9,overtake_for_lead
+2,Reverse Grid Race,27,fastest_lap
+2,Reverse Grid Race,30,chequered_flag
+2,Feature Race,1,lights_out
+2,Feature Race,9,safety_car
+2,Feature Race,14,safety_car
+2,Feature Race,30,chequered_flag
+3,Qualifying,1,session_start
+3,Qualifying,20,red_flag
+3,Qualifying,27,pole_lap
+3,Reverse Grid Race,1,lights_out
+3,Reverse Grid Race,6,overtake_for_lead
+3,Reverse Grid Race,30,chequered_flag
+3,Feature Race,1,lights_out
+3,Feature Race,11,safety_car
+3,Feature Race,23,overtake_for_lead
+3,Feature Race,30,chequered_flag
+4,Qualifying,1,session_start
+4,Qualifying,26,pole_lap
+4,Reverse Grid Race,1,lights_out
+4,Reverse Grid Race,14,fastest_lap
+4,Reverse Grid Race,30,chequered_flag
+4,Feature Race,1,lights_out
+4,Feature Race,9,overtake_for_lead
+4,Feature Race,30,chequered_flag
