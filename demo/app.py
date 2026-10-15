@@ -7,6 +7,8 @@ All data is SYNTHETIC. Steps 1-4 and 6 are real; 5, 7 and 8 are mocked.
 """
 import html
 import json
+import os
+import shutil
 from pathlib import Path
 
 import pandas as pd
@@ -27,21 +29,42 @@ def get_data():
 
 d = get_data()
 
+def _public_demo():
+    """True on a shared/hosted link: live AWS calls are switched off so nobody can use the host's credentials.
+    Set PUBLIC_DEMO=1 (environment variable or Streamlit secret), or run where the AWS CLI is not installed."""
+    if os.environ.get("PUBLIC_DEMO") == "1":
+        return True
+    try:
+        if str(st.secrets.get("PUBLIC_DEMO", "")) == "1":
+            return True
+    except Exception:                      # no secrets file: fine
+        pass
+    return shutil.which("aws") is None
+
+
+PUBLIC = _public_demo()
+
 # ------------------------------------------------------------------ sidebar
 with st.sidebar:
     st.header("Settings")
-    mode = st.radio("Mode", ["Live (Amazon Bedrock)", "Offline (saved or template)"],
-                    help="Offline needs no AWS access. Use it as the backup if Wi-Fi or credentials fail.")
-    live = mode.startswith("Live")
-    profile = st.text_input("AWS profile", p.DEFAULT_PROFILE)
-    model_id = st.text_input("Bedrock model or inference profile", p.DEFAULT_MODEL)
-    use_embeddings = st.checkbox("Step 3: use Titan embeddings (AI) for asset search", value=True,
-                                 disabled=not live)
-    if live and st.button("Test AWS connection"):
-        try:
-            st.success("Connected as " + p.whoami(profile).split("/")[-1])
-        except Exception as ex:
-            st.error(f"{type(ex).__name__}: {ex}")
+    profile, model_id = p.DEFAULT_PROFILE, p.DEFAULT_MODEL
+    if PUBLIC:
+        live, use_embeddings = False, False
+        st.info("Public demo. The Amazon Bedrock results here were saved from a live run, so this link replays "
+                "real Claude output. Live calls are switched off.")
+    else:
+        mode = st.radio("Mode", ["Live (Amazon Bedrock)", "Offline (saved or template)"],
+                        help="Offline needs no AWS access. Use it as the backup if Wi-Fi or credentials fail.")
+        live = mode.startswith("Live")
+        profile = st.text_input("AWS profile", p.DEFAULT_PROFILE)
+        model_id = st.text_input("Bedrock model or inference profile", p.DEFAULT_MODEL)
+        use_embeddings = st.checkbox("Step 3: use Titan embeddings (AI) for asset search", value=True,
+                                     disabled=not live)
+        if live and st.button("Test AWS connection"):
+            try:
+                st.success("Connected as " + p.whoami(profile).split("/")[-1])
+            except Exception as ex:
+                st.error(f"{type(ex).__name__}: {ex}")
     st.divider()
     st.caption("All data in this demo is synthetic. Team names and venues are real; drivers, fans, "
                "clips and numbers are invented.")
@@ -68,13 +91,64 @@ with st.expander("How the flow works (which steps use AI)", expanded=False):
 signals = p.build_signals(d)
 by_id = {s["id"]: s for s in signals}
 
-tabs = st.tabs(["1 Signals (AI)", "2 Decide (no AI)", "3 Assets (AI)", "4 Script (AI)",
-                "5 Assemble (mock)", "6 Check + approve (human)", "7 Publish (mock)", "8 Measure (mock)"])
+_all_tabs = st.tabs(["Goal + audience", "1 Signals (AI)", "2 Decide (no AI)", "3 Assets (AI)", "4 Script (AI)",
+                     "5 Assemble (mock)", "6 Check + approve (human)", "7 Publish (mock)", "8 Measure (mock)"])
+goal_tab, tabs = _all_tabs[0], _all_tabs[1:]
+
+# ------------------------------------------------------------------ goal + audience
+with goal_tab:
+    st.subheader("The goal and who is missing")
+    st.caption("Starting point for the 8-step flow. Synthetic data; the 14.4% benchmark is an assumption.")
+    gb = d["growth_baseline"].set_index("platform")
+    allrow = gb.loc["ALL"]
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Under-25 followers (30 Sep 2026)", f"{int(allrow.under25_followers):,}")
+    c2.metric("Target (+20%)", f"{int(allrow.target_under25_plus20pct):,}")
+    c3.metric("Gap to close", f"{int(allrow.followers_gap_to_target):,}",
+              help="Target minus where organic growth (about 1.3% a month) gets us in 6 months. The 6-month horizon is an assumption.")
+    c4.metric("Growth needed per month", f"{allrow.required_monthly_growth_6m:.2%}",
+              delta=f"organic today {allrow.organic_monthly_growth_under25:.2%}", delta_color="off")
+    st.dataframe(
+        gb.reset_index()[["platform", "under25_followers", "under25_share", "target_under25_plus20pct",
+                          "followers_gap_to_target"]].rename(columns={
+            "platform": "Platform", "under25_followers": "Under-25 followers", "under25_share": "Under-25 share",
+            "target_under25_plus20pct": "Target (+20%)", "followers_gap_to_target": "Gap"}),
+        hide_index=True, use_container_width=True)
+
+    seg = d["audience_segments"]
+    left, right = st.columns(2)
+    with left:
+        st.markdown("**Who follows F1 Academy versus the platform benchmark**")
+        band = seg.drop_duplicates("primary_age_band").set_index("primary_age_band")
+        st.bar_chart(pd.DataFrame({"F1 Academy follower share": band.current_follower_share,
+                                   "Platform benchmark (assumption)": band.benchmark_share}))
+        st.caption("13-17 are 7.2% of followers versus a 14.4% benchmark. 18-24 are close to the benchmark.")
+    with right:
+        st.markdown("**Opportunity score by audience segment**")
+        st.bar_chart(seg.set_index("segment_name").opportunity_score)
+        st.caption("Relative ranking from five inputs (size, follower gap, readiness, momentum, engagement). "
+                   "Formula and worked example: strategy doc, section 3.4.")
+    st.dataframe(seg[["opportunity_rank", "segment_name", "primary_age_band", "opportunity_score", "best_platform",
+                      "best_hook", "best_duration_bucket"]].rename(columns={
+        "opportunity_rank": "Rank", "segment_name": "Segment", "primary_age_band": "Age", "opportunity_score": "Score",
+        "best_platform": "Best platform", "best_hook": "Best hook", "best_duration_bucket": "Best length"}),
+        hide_index=True, use_container_width=True)
+
+    st.markdown("**What content reaches young viewers** (under-25 reach index; 1.00 = platform average)")
+    cp = d["content_performance"]
+    cols = st.columns(3)
+    for col, (dim, title) in zip(cols, [("theme", "Theme"), ("hook_type", "Hook"), ("duration_bucket", "Length")]):
+        sub = cp[(cp.dimension == dim) & (cp.platform == "all")].set_index("value").under25_reach_index.sort_values()
+        col.markdown(f"*{title}*")
+        col.bar_chart(sub, horizontal=True)
+    st.info("Short videos (30 seconds or less) with a POV, question or story hook, and driver or STEM stories, "
+            "reach young viewers best. Long race recaps reach them least. Next: pick a signal in step 1.")
 
 # ------------------------------------------------------------------ 1 signals
 with tabs[0]:
     st.subheader("Step 1: Signals")
-    st.markdown(":violet[AI: YES] (Bedrock tags comments with intent) | Runs: automatic | Demo: real")
+    st.markdown(":violet[AI: YES in the design] (Bedrock tags comments with intent; this demo uses keyword rules "
+                "with the same output) | Runs: automatic | Demo: real data, rule-based tags")
     st.write("Each signal comes from the refined data. Pick one to run through the flow.")
     labels = {s["id"]: f"[{s['type']}] {s['title']}" for s in signals}
     sel = st.radio("Signal", list(labels), format_func=lambda i: labels[i], key="signal_id")
